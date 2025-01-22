@@ -152,6 +152,7 @@ saveExpenseButton.addEventListener('click', () => {
         document.getElementById('expenseTitle').value = '';
         document.getElementById('expenseAmount').value = '';
         saveExpenses(); // Sauvegarder les dépenses après ajout
+        window.location.reload();
     } else {
         alert('Veuillez remplir tous les champs.');
     }
@@ -168,6 +169,7 @@ saveRevenuButton.addEventListener('click', () => {
         document.getElementById('revenueTitle').value = '';
         document.getElementById('revenueAmount').value = '';
         saveRevenus(); // Sauvegarder les revenus après ajout
+        window.location.reload();
     } else {
         alert('Veuillez remplir tous les champs.');
     }
