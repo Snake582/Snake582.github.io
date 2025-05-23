@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion du Budget</title>
-    <link rel="stylesheet" href="Budget.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion du Budget</title>
+  <link rel="stylesheet" href="Budget.css">
 </head>
 <body>
-<div class="container">
-        <div class="header">
-           <img src="Group 1.png" alt="budget-image">
-            <p style="color: rgb(155, 155, 10);">Gestion Du Budget</p>
-        </div>
-        <div class="gbox">
-            <div class="box">
-                <h3>Budget</h3>
-                <p id="budgetTotal"></p>
-            </div>
-            <div class="box">
-                <h3>Dépenses</h3>
-                <p id="budgetDepenses"></p>
-            </div>
-            <div class="box">
-                <h3>Solde</h3>
-                <p id="budgetSolde"></p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="header">
+      <img src="Group 1.png" alt="budget-image">
+      <p style="color: rgb(155, 155, 10);">Gestion Du Budget</p>
     </div>
-    <div class="container">
-        <h5>Liste des dépenses</h5>
-        <table id="expenseTable">
-            <thead>
-                <tr>
-                    <th>TITRE</th>
-                    <th>MONTANT</th>
-                    <th>ACTION</th>
-                </tr>
-            </thead>
-            <tbody id="tBody"></tbody>
-        </table>
-        <button class="btn-add" id="addExpenseButton">Ajouter dépenses</button>
+    <div class="gbox">
+      <div class="box">
+        <h3>Budget</h3>
+        <p id="budgetTotal"></p>
+      </div>
+      <div class="box">
+        <h3>Dépenses</h3>
+        <p id="budgetDepenses"></p>
+      </div>
+      <div class="box">
+        <h3>Solde</h3>
+        <p id="budgetSolde"></p>
+      </div>
     </div>
-<div class="container">
-        <h5>liste des revenus</h5>
-        <table id="revenuTable">
-           <thead>
-            <tr>
-                <th>TITRE</th>
-                <th>MONTANT</th>
-                <th>ACTION</th>
-            </tr>
-           </thead>
-            <tbody id="tBody"></tbody>
-        </table>
-        <button class="btn-add" id="addRevenuButton">Ajouter revenues</button>
-    </div>
+  </div>
 
-    <!-- Modal -->
-    <div class="modal" id="expenseModal">
-        <div class="modal-content">
-            <div class="header">
-                <img src="Group 1.png" alt="budget-image">
-                 <p style="color: rgb(155, 155, 10);">Gestion Du Budget</p>
-             </div>
-            <h3>Ajouter une dépense</h3>
-            <input type="text" id="expenseTitle" placeholder="Titre">
-            <input type="number" id="expenseAmount" placeholder="Montant">
-            <button class="btn-save" id="saveExpense">Valider</button>
-            <button class="btn-cancel" id="cancelExpense">Annuler</button>
-        </div>
+  <div class="container">
+    <h5>Liste des dépenses</h5>
+    <table id="expenseTable">
+      <thead>
+        <tr>
+          <th>TITRE</th>
+          <th>MONTANT</th>
+          <th>ACTION</th>
+        </tr>
+      </thead>
+      <tbody id="expenseTbody"></tbody>
+    </table>
+    <button class="btn-add" id="addExpenseButton">Ajouter dépenses</button>
+  </div>
+
+  <div class="container">
+    <h5>Liste des revenus</h5>
+    <table id="revenuTable">
+      <thead>
+        <tr>
+          <th>TITRE</th>
+          <th>MONTANT</th>
+          <th>ACTION</th>
+        </tr>
+      </thead>
+      <tbody id="revenuTbody"></tbody>
+    </table>
+    <button class="btn-add" id="addRevenuButton">Ajouter revenus</button>
+  </div>
+
+  <!-- Modal Dépenses -->
+  <div class="modal" id="expenseModal">
+    <div class="modal-content">
+      <div class="header">
+        <img src="Group 1.png" alt="budget-image">
+        <p style="color: rgb(155, 155, 10);">Gestion Du Budget</p>
+      </div>
+      <h3>Ajouter une dépense</h3>
+      <input type="text" id="expenseTitle" placeholder="Titre">
+      <input type="number" id="expenseAmount" placeholder="Montant">
+      <button class="btn-save" id="saveExpense">Valider</button>
+      <button class="btn-cancel" id="cancelExpense">Annuler</button>
     </div>
-    <div class="modal" id="revenusModal">
-        <div class="modal-content">
-            <div class="header">
-                <img src="Group 1.png" alt="budget-image">
-                 <p style="color: rgb(155, 155, 10);">Gestion Du Budget</p>
-             </div>
-            <h3>Ajouter une revenue</h3>
-            <input type="text" id="revenueTitle" placeholder="Titre">
-            <input type="number" id="revenueAmount" placeholder="Montant">
-            <button class="btn-save" id="saveRevenu">Valider</button>
-            <button class="btn-cancel" id="cancelRevenu">Annuler</button>
-        </div>
+  </div>
+
+  <!-- Modal Revenus -->
+  <div class="modal" id="revenusModal">
+    <div class="modal-content">
+      <div class="header">
+        <img src="Group 1.png" alt="budget-image">
+        <p style="color: rgb(155, 155, 10);">Gestion Du Budget</p>
+      </div>
+      <h3>Ajouter une revenue</h3>
+      <input type="text" id="revenueTitle" placeholder="Titre">
+      <input type="number" id="revenueAmount" placeholder="Montant">
+      <button class="btn-save" id="saveRevenu">Valider</button>
+      <button class="btn-cancel" id="cancelRevenu">Annuler</button>
     </div>
-<script src="scipt.js"></script>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
